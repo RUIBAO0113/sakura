@@ -4,8 +4,26 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon ./src/main.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "serve": "node ./dist/server.bundle.js",
+    "dev": "nodemon --exec babel-node src/main.js",
+    "webpack:debug": "node --inspect-brk ./node_modules/.bin/webpack --config config/webpack.config.prod.js --progress",
+    "watch": "cross-env NODE_ENV=development webpack --watch --config config/webpack.config.dev.js --progress",
+    "debug": "nodemon --inspect dist/server.bundle.js",
+    "start:dist": "npm-run-all -p watch debug",
+    "build": "cross-env NODE_ENV=production webpack --config config/webpack.config.prod.js",
+    "clean": "rimraf dist"
+  },
+  "_moduleAliases": {
+    "@": "src",
+    "@config": "src/config",
+    "@app": "src/app",
+    "@constant": "src/constant",
+    "@controller": "src/controller",
+    "@db": "src/db",
+    "@middleware": "src/middleware",
+    "@model": "src/model",
+    "@router": "src/router",
+    "@service": "src/service"
   },
   "keywords": [],
   "author": "",
@@ -23,6 +41,23 @@
     "sequelize": "^6.6.2"
   },
   "devDependencies": {
-    "nodemon": "^2.0.7"
+    "@babel/core": "^7.20.5",
+    "@babel/node": "^7.20.5",
+    "@babel/preset-env": "^7.20.2",
+    "babel-loader": "^8.0.6",
+    "@babel/polyfill": "^7.8.3",
+    "babel-preset-es2015": "^6.24.1",
+    "clean-webpack-plugin": "^4.0.0",
+    "cross-env": "^7.0.3",
+    "module-alias": "^2.2.2",
+    "nodemon": "^2.0.7",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^3.0.2",
+    "terser-webpack-plugin": "^4.2.3",
+    "webpack": "^4.46.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-merge": "^5.8.0",
+    "webpack-node-externals": "^3.0.0",
+    "webpackbar": "^5.0.2"
   }
 }
