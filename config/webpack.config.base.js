@@ -36,15 +36,19 @@ const webpackConfig = {
         alias: {
             // 设置别名指向对应目录
             '@': path.join(__dirname, '../src'),
-            '@config': path.join(__dirname, '../src/config'),
             '@app': path.join(__dirname, '../src/app'),
+            '@config': path.join(__dirname, '../src/config'),
             '@constant': path.join(__dirname, '../src/constant'),
             '@controller': path.join(__dirname, '../src/controller'),
             '@db': path.join(__dirname, '../src/db'),
+            '@globalData': path.join(__dirname, '../src/globalData'),
             '@middleware': path.join(__dirname, '../src/middleware'),
             '@model': path.join(__dirname, '../src/model'),
             '@router': path.join(__dirname, '../src/router'),
             '@service': path.join(__dirname, '../src/service'),
+            '@static': path.join(__dirname, '../src/static'),
+            '@utils': path.join(__dirname, '../src/utils'),
+            '@views': path.join(__dirname, '../src/views'),
         }
     },
     externals: [nodeExternals()], // 排除对node_modules里的依赖进行打包
