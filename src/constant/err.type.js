@@ -1,4 +1,14 @@
 module.exports = {
+  serverError: {
+    code: '404',
+    message: '服务器内部错误',
+    result: ''
+  },
+  emptyParamsError: {
+    code: '403',
+    message: '参数为空',
+    result: ''
+  },
   userFormateError: {
     code: '10001',
     message: '用户名或密码为空',

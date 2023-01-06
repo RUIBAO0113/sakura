@@ -18,7 +18,6 @@ const webpackConfig = merge(baseConfig, {
             // 里面是官方推荐的具体的参数，详情可查看文档
             new TerserPlugin({
                 terserOptions: {
-                    warning: true,
                     compress: {
                         warnings: false,
                         drop_console: false, // 取消注释console 方便有时候进行调试
@@ -32,7 +31,6 @@ const webpackConfig = merge(baseConfig, {
                     mangle: true
                 },
                 parallel: true, // 使用多进程并行运行可提高构建速度，默认的并发运行数量 os.cpus().length - 1
-                sourceMap: false
             })
         ],
         // splitChunks 用来避免模块之间重复的依赖关系

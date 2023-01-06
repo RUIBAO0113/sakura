@@ -1,12 +1,14 @@
 const path = require('path')
 const webpack = require('webpack')
+const WebpackBar = require("webpackbar")
 const nodeExternals = require('webpack-node-externals')
 const {
     CleanWebpackPlugin
 } = require('clean-webpack-plugin')
-const WebpackBar = require('webpackbar');
 const webpackConfig = {
-    target: 'node', // koa项目仅在node环境下运行，因此设置称'node'
+    externalsPresets: {
+        node: true
+    }, // koa项目仅在node环境下运行，因此设置称'node'
     entry: {
         // 设置入口文件
         server: path.join(__dirname, '../src/main.js')
@@ -68,14 +70,9 @@ const webpackConfig = {
     ],
     // node下这些选项可以使最初为Node.js环境编写的代码，在其他环境（如浏览器）中运行
     node: {
-        console: true,
         global: true,
-        process: true,
-        Buffer: true,
         __filename: true,
         __dirname: true,
-        setImmediate: true,
-        path: true
     }
 }
 

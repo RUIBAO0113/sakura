@@ -3,5 +3,5 @@ const {
 } = require('@constant/err.type')
 module.exports = {
     serverError: serverError,
-    name: 'sakura-web'
+    name: 'sakura9-web'
 }

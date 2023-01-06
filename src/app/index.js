@@ -4,7 +4,10 @@ const Koa = require('koa')
 require('module-alias/register')
 // 视图
 const views = require('koa-views')
-const KoaBody = require('koa-body')
+const {
+  koaBody
+} = require('koa-body')
+console.log('KoaBody', koaBody)
 const KoaStatic = require('koa-static')
 // 数据库
 const seq = require('@db/seq')
@@ -32,7 +35,7 @@ app.use(views(path.join(__dirname, '../views'), {
 }))
 // 处理请求
 app.use(
-  KoaBody({
+  koaBody({
     multipart: true,
     formidable: {
       maxFileSize: 1000 * 1024 * 1024,

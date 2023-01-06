@@ -1,4 +1,16 @@
 const Router = require('koa-router')
+// 中间件
+const {
+    emptyParamsCheck
+} = require("@middleware/common/emptyParamsCheck.middleware")
+const {
+    checkToken
+} = require("@middleware/example.middleware")
+// 控制器
+const {
+    CSignUp,
+    CGetUserInfo
+} = require("@controller/example.controller")
 const router = new Router({
     // 路由前缀
     prefix: '/example'
@@ -29,4 +41,8 @@ router.post('/post', ctx => {
         data: null
     }
 })
+// 注册
+router.post('/signUp', emptyParamsCheck(['name', 'tel', 'sex']), CSignUp)
+// 查询用户信息
+router.post('/getUserInfo', emptyParamsCheck(['id']), checkToken, CGetUserInfo)
 module.exports = router
