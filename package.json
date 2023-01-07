@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "pm2": "pm2 start ecosystem.config.js",
-    "serve": "node ./dist/server.bundle.js",
-    "dev": "nodemon --exec babel-node src/main.js",
+    "serve": "cross-env NODE_ENV=production node ./dist/server.bundle.js",
+    "dev": "cross-env NODE_ENV=development nodemon --exec babel-node src/main.js",
     "webpack:debug": "node --inspect-brk ./node_modules/.bin/webpack --config config/webpack.config.prod.js --progress",
     "watch": "cross-env NODE_ENV=development webpack --watch --config config/webpack.config.dev.js --progress",
     "debug": "nodemon --inspect dist/server.bundle.js",
@@ -45,6 +45,8 @@
     "koa-router": "^12.0.0",
     "koa-static": "^5.0.0",
     "koa-views": "^8.0.0",
+    "log4js": "^6.7.1",
+    "moment": "^2.29.4",
     "mysql2": "^2.3.3",
     "sequelize": "^6.28.0"
   },

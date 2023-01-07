@@ -1,0 +1,56 @@
+2023-01-07 20:55 +08:00: [▸ DATABASE] has been established successfully.
+2023-01-07 20:55 +08:00: [▸ DATABASE] has been established successfully.
+2023-01-07 20:55 +08:00: ╭───────────────────────────────────────╮
+2023-01-07 20:55 +08:00: │                                       │
+2023-01-07 20:55 +08:00: │     api @ v1.1.0                      │
+2023-01-07 20:55 +08:00: │                                       │
+2023-01-07 20:55 +08:00: │ Listening: http://localhost:8888      │
+2023-01-07 20:55 +08:00: │ IPV4: http://192.168.241.32:8888      │
+2023-01-07 20:55 +08:00: ╰───────────────────────────────────────╯
+2023-01-07 20:55 +08:00: ╭───────────────────────────────────────╮
+2023-01-07 20:55 +08:00: │                                       │
+2023-01-07 20:55 +08:00: │     api @ v1.1.0                      │
+2023-01-07 20:55 +08:00: │                                       │
+2023-01-07 20:55 +08:00: │ Listening: http://localhost:8888      │
+2023-01-07 20:55 +08:00: │ IPV4: http://192.168.241.32:8888      │
+2023-01-07 20:55 +08:00: ╰───────────────────────────────────────╯
+2023-01-07 20:55 +08:00: Executing (default): SELECT 1+1 AS result
+2023-01-07 20:55 +08:00: Executing (default): SELECT 1+1 AS result
+2023-01-07 20:55 +08:00: [2023-01-07T20:55:47.320] [INFO] http - method: GET
+originalUrl: /example
+client ip: ::1
+query: {}
+request time: 0
+
+2023-01-07 20:55 +08:00: [2023-01-07T20:55:47.371] [INFO] resLogger - 
+***************  response log start  ***************
+method: GET
+originalUrl: /example
+client ip: ::1
+query: {}
+request time: 49
+response status: 200
+response body: 
+{"code":200,"message":"Success","data":null}
+
+***************  response log start  ***************
+
+2023-01-07 21:49 +08:00: [2023-01-07T21:49:25.714] [INFO] http - method: GET
+originalUrl: /example
+client ip: ::1
+query: {}
+request time: 0
+
+2023-01-07 21:49 +08:00: [2023-01-07T21:49:25.716] [INFO] resLogger - 
+***************  response log start  ***************
+method: GET
+originalUrl: /example
+client ip: ::1
+query: {}
+request time: 2
+response status: 200
+response body: 
+{"code":200,"message":"Success","data":null}
+
+***************  response log start  ***************
+

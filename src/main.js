@@ -1,7 +1,6 @@
-const { APP_PORT } = require('./config/config.default')
-
+const serviceConsole = require("./utils/serviceConsole")
+const {
+  APP_PORT
+} = require('./config/config.default')
 const app = require('./app')
-
-app.listen(APP_PORT, () => {
-  console.log(`server is running on http://localhost:${APP_PORT}`)
-})
+app.listen(APP_PORT, serviceConsole(APP_PORT))

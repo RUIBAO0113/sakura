@@ -6,6 +6,7 @@ module.exports = {
         script: './src/main.js',
         // 开启实例
         instances: 2,
+        instance_var: "INSTANCE_ID",
         // 默认为true, 发生异常的情况下自动重启
         autorestart: true,
         // 设置追加日志而不是新建日志

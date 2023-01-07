@@ -1,7 +1,6 @@
 const {
     emptyParamsError
 } = require('@constant/err.type')
-// 参数为空
 const emptyParamsCheck = (keyList) => {
     return async function (ctx, next) {
         let isHasEmpty = false
