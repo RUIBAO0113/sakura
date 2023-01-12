@@ -2,15 +2,11 @@
   "name": "api",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
     "pm2": "pm2 start ecosystem.config.js",
     "serve": "cross-env NODE_ENV=production node ./dist/server.bundle.js",
     "dev": "cross-env NODE_ENV=development nodemon --exec babel-node src/main.js",
-    "webpack:debug": "node --inspect-brk ./node_modules/.bin/webpack --config config/webpack.config.prod.js --progress",
-    "watch": "cross-env NODE_ENV=development webpack --watch --config config/webpack.config.dev.js --progress",
-    "debug": "nodemon --inspect dist/server.bundle.js",
-    "start:dist": "npm-run-all -p watch debug",
     "build": "cross-env NODE_ENV=production webpack --config config/webpack.config.prod.js",
     "clean": "rimraf dist"
   },
